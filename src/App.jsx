@@ -19,10 +19,16 @@ function App() {
 
   }
 
+  function removerTarefa(id){
+    const novaLista = listaTarefas.filter(item => item.id != id)
+
+    setListaTarefas(novaLista)
+  }
+
   return (
     <>
       <AdicionarCard criarTarefa={criarTarefa}/>
-      <div>{listaTarefas.map(tarefa => (<ListItem key={tarefa.id} textoTarefa={tarefa.textoTarefa} finalizado={tarefa.finalizado} />))}</div>
+      <div>{listaTarefas.map(tarefa => (<ListItem key={tarefa.id} id={tarefa.id} textoTarefa={tarefa.textoTarefa} finalizado={tarefa.finalizado} removerTarefa={removerTarefa}/>))}</div>
     </>
   )
 }
