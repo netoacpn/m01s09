@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./style.css"
 
 function AdicionarCard (props) {  
 
@@ -10,10 +11,10 @@ function AdicionarCard (props) {
   }
 
   return(
-    <>
-      <input placeholder="Digite sua Tarefa" type="text" value={textoTarefa} onChange={(e) => setTextoTarefa(e.target.value)}/>
-      <button onClick={() => handleCriarTarefa()}>Adicionar</button>            
-    </>
+    <div class="divGrid">
+      <input class="input" placeholder="Digite sua Tarefa" type="text" value={textoTarefa} onChange={(e) => setTextoTarefa(e.target.value)}/>
+      <button class="button" onClick={() => handleCriarTarefa()}>Adicionar</button>            
+    </div>
   )
 }
 
